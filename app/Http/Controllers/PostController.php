@@ -11,6 +11,10 @@ class PostController extends Controller
     {
         return view('posts/index')->with(['sneakers'=>$sneaker->getPaginateByLimit()]);
     }
+    public function show(Sneaker $sneaker)
+    {
+        return view('posts/show')->with(['sneaker'=>$sneaker]);
+    }
 }
 
 ?>
