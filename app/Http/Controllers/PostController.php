@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index(Sneaker $sneaker)
     {
-        return $sneaker->get();
+        return view('posts/index')->with(['sneakers'=>$sneaker->getPaginateByLimit()]);
     }
 }
 

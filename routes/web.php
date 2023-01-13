@@ -14,4 +14,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/sneakers', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index']);
+
+
+?>
