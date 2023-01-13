@@ -15,6 +15,10 @@ class PostController extends Controller
     {
         return view('posts/show')->with(['sneaker'=>$sneaker]);
     }
+    public function post()
+    {
+        return view('posts/post');
+    }
 }
 
 ?>

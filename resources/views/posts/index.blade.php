@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+        <a href='/sneakers/post'>post</a>
         <div class='sneakers'>
             @foreach ($sneakers as $sneaker)
                 <div class='sneaker'>
