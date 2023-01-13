@@ -11,7 +11,9 @@
         <div class='sneakers'>
             @foreach ($sneakers as $sneaker)
                 <div class='sneaker'>
-                    <h2 class='title'>{{ $sneaker->title }}</h2>
+                    <h2 class='title'>
+                        <a href="/sneakers/{{ $sneaker->id }}">{{ $sneaker->title }}</a>
+                    </h2>
                     <p class='body'>{{ $sneaker->body }}</p>
                 </div>
             @endforeach

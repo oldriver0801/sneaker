@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('sneakers', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 50);
-            $table->string('body', 400);
+            $table->string('name', 50);
+            $table->string('message', 400);
             $table->timestamps();
             $table->softDeletes();
         });
