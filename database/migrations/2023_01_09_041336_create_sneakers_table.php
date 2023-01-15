@@ -15,8 +15,12 @@ return new class extends Migration
     {
         Schema::create('sneakers', function (Blueprint $table) {
             $table->id();
+            $table->user_id()->nullable;
             $table->string('name', 50);
             $table->string('message', 400);
+            $table->string('brand', 50)->nullale;
+            $table->string('size', 10)->nullale;
+            $table->string('price', 10)->nullable;
             $table->timestamps();
             $table->softDeletes();
         });
