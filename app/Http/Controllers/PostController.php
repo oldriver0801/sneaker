@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Sneaker;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -18,6 +18,12 @@ class PostController extends Controller
     public function post()
     {
         return view('posts/post');
+    }
+    public function store(Sneaker $sneaker,PostRequest $request)
+    {
+        $input = $request['post'];
+        $sneaker->fill($input)->save();
+        return redirect('/sneakers/' . $sneaker->id);
     }
 }
 
