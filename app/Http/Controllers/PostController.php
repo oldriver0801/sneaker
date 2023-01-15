@@ -25,6 +25,17 @@ class PostController extends Controller
         $sneaker->fill($input)->save();
         return redirect('/sneakers/' . $sneaker->id);
     }
+    public function edit(Sneaker $sneaker)
+    {
+        return view('posts/edit')->with(['sneaker'=>$sneaker]);
+    }
+    public function update(PostRequest $request,Sneaker $sneaker)
+    {
+        $input_sneaker = $request['post'];
+        $sneaker->fill($input_sneaker)->save();
+        
+        return redirect('/sneakers/' . $sneaker->id);
+    }
 }
 
 ?>

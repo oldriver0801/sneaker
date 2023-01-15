@@ -13,13 +13,13 @@
                 @method('PUT')
                 <div class='content__title'>
                     <h2>タイトル</h2>
-                    <input type='text' name='sneaker[title]' value="{{ $sneaker->title }}">
+                    <input type='text' name='post[title]' value="{{ $sneaker->title }}">
                 </div>
                 <div class='content__body'>
                     <h2>本文</h2>
-                    <input type='text' name='sneaker[body]' value="{{ $sneaker->body }}">
+                    <input type='text' name='post[body]' value="{{ $sneaker->body }}">
                 </div>
-                <input type="submit" value="保存">
+                <input type="submit" value="update">
             </form>
         </div>
     </body>
