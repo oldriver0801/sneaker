@@ -36,6 +36,11 @@ class PostController extends Controller
         
         return redirect('/sneakers/' . $sneaker->id);
     }
+    public function delete(Sneaker $sneaker)
+    {
+        $sneaker->delete();
+        return redirect('/');
+    }
 }
 
 ?>
