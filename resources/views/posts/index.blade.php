@@ -20,12 +20,26 @@
                         <a href="/sneakers/{{ $sneaker->id }}">{{ $sneaker->title }}</a>
                     </h2>
                     <p class='body'>{{ $sneaker->body }}</p>
+                        <form action="/sneakers/{{ $sneaker->id }}" id="form_{{ $sneaker->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" onclick="deleteSneaker({{ $sneaker->id }})">delete</button> 
+                        </form>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $sneakers->links() }}
         </div>
+        <script>
+            function deleteSneaker(id) {
+            'use strict'
+
+                if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                document.getElementById(`form_${id}`).submit();
+                }
+            }
+        </script>
     </body>
 </html>
 </x-app-layout>

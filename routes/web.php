@@ -24,9 +24,9 @@ Route::controller(PostController::class)->middleware(['auth'])->group (function(
     Route::get('/sneakers/post', 'post')->name('post');
     Route::get('/sneakers/{sneaker}', 'show')->name('show');
     Route::post('/sneakers', 'store')->name('store');
-    Route::get('/sneakers/{sneaker}/edit', 'edit')->name('edit');
     Route::put('/sneakers/{sneaker}', 'update')->name('update');
-    
+    Route::delete('/sneakers/{sneaker}', 'delete')->name('delete');
+    Route::get('/sneakers/{sneaker}/edit', 'edit')->name('edit');
 });
 
 Route::middleware('auth')->group(function () {
