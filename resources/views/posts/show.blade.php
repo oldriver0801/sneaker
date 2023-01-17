@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1 class="title">
-            {{ $sneaker->title }}
+            {{ $sneaker->name }}
         </h1>
         <div class="content">
             <div class="content__post">

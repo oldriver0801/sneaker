@@ -9,8 +9,8 @@ class Postrequest extends FormRequest
     public function rules()
     {
         return [
-            'post.title'=>'required|string|max:100',
-            'post.body'=>'required|string|max:400',
+            'sneaker.name'=>'required|string|max:100',
+            'sneaker.body'=>'required|string|max:400',
         ];
     }
 }

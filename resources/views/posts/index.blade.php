@@ -15,9 +15,9 @@
         <a href='/sneakers/post'>post</a>
         <div class='sneakers'>
             @foreach ($sneakers as $sneaker)
-                <div class='sneaker'>
-                    <h2 class='title'>
-                        <a href="/sneakers/{{ $sneaker->id }}">{{ $sneaker->title }}</a>
+                <div class='sneakers'>
+                    <h2 class='name'>
+                        <a href="/sneakers/{{ $sneaker->id }}">{{ $sneaker->name }}</a>
                     </h2>
                     <p class='body'>{{ $sneaker->body }}</p>
                         <form action="/sneakers/{{ $sneaker->id }}" id="form_{{ $sneaker->id }}" method="post">
