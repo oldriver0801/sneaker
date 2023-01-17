@@ -17,7 +17,7 @@ class Sneaker extends Model
     use HasFactory;
    
     protected $fillable = [
-    'title',
+    'name',
     'body',
  ];
 }

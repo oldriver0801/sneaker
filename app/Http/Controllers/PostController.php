@@ -21,7 +21,7 @@ class PostController extends Controller
     }
     public function store(Sneaker $sneaker,PostRequest $request)
     {
-        $input = $request['post'];
+        $input = $request['sneaker'];
         $sneaker->fill($input)->save();
         return redirect('/sneakers/' . $sneaker->id);
     }
