@@ -20,6 +20,7 @@
                         <a href="/sneakers/{{ $sneaker->id }}">{{ $sneaker->name }}</a>
                     </h2>
                     <p class='body'>{{ $sneaker->body }}</p>
+                    <small>{{ $sneaker->user->name }}</small>
                         <form action="/sneakers/{{ $sneaker->id }}" id="form_{{ $sneaker->id }}" method="post">
                             @csrf
                             @method('DELETE')
