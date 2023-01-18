@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('sneakers', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned;
             $table->string('name', 50);
             $table->string('body', 400);
             $table->timestamps();

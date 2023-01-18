@@ -16,6 +16,7 @@
                 <h3>本文</h3>
                 <p>{{ $sneaker->body }}</p>    
             </div>
+            <small>{{ $sneaker->user->name }}</small>
         </div>
         <div class ="edit">
             <a href="/sneakers/{{ $sneaker->id }}/edit">edit</a>

@@ -22,6 +22,7 @@ class PostController extends Controller
     public function store(Sneaker $sneaker,PostRequest $request)
     {
         $input = $request['sneaker'];
+        $input += ['user_id' => $request->user()->id];
         $sneaker->fill($input)->save();
         return redirect('/sneakers/' . $sneaker->id);
     }
@@ -32,6 +33,7 @@ class PostController extends Controller
     public function update(PostRequest $request,Sneaker $sneaker)
     {
         $input_sneaker = $request['post'];
+        $input_sneaker += ['user_id' => $request->user()->id];
         $sneaker->fill($input_sneaker)->save();
         
         return redirect('/sneakers/' . $sneaker->id);
