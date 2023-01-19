@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sneaker;
 use App\Http\Requests\PostRequest;
+use Cloudinary;
 
 class PostController extends Controller
 {
@@ -21,8 +22,11 @@ class PostController extends Controller
     }
     public function store(Sneaker $sneaker,PostRequest $request)
     {
+        $image_url=Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        
         $input = $request['sneaker'];
         $input += ['user_id' => $request->user()->id];
+        $input += ['image_url' => $image_url];
         $sneaker->fill($input)->save();
         return redirect('/sneakers/' . $sneaker->id);
     }
