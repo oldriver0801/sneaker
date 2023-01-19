@@ -21,6 +21,9 @@
             <img src="{{ $sneaker->image_url }}" alt="画像が読み込めません"/>
         </div>
             <small>{{ $sneaker->user->name }}</small>
+        <div class=settlement>
+            <a href="/sneakers/{{ $sneaker->id }}/settlement">購入する</a>
+        </div>
         <div class ="edit">
             <a href="/sneakers/{{ $sneaker->id }}/edit">edit</a>
         </div>
