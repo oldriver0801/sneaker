@@ -8,12 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Cashier\Billable;
+use App\Models\Sneaker;
 
 class User extends Authenticatable
 {
     public function sneakers()
     {
-        return $this->hasMany('App\Sneaker');
+        return $this->hasMany(Sneaker::class);
     }
     use HasApiTokens, HasFactory, Notifiable, Billable;
 
