@@ -9,6 +9,10 @@ use Stripe\Charge;
 
 class StripePaymentsController extends Controller
 {
+    public function settlement()
+    {
+        return view('posts/settlement');
+    }
     public function Payment(Request $request)
     {
         try{
@@ -41,5 +45,9 @@ class StripePaymentsController extends Controller
         
             return $e->getMessage();
         }
+    }
+    public function complete()
+    {
+        return view('posts/complete');
     }
 }

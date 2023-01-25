@@ -36,7 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('payment', [StripePaymentsController::class, 'Payment'])->name('payment');
+Route::get('/sneakers/{sneaker}/settlement', [StripePaymentsController::class, 'settlement'])->name('settlement');
+Route::post('/sneakers/{sneaker}/settlement/payment', [StripePaymentsController::class, 'Payment'])->name('payment');
+Route::get('/sneakers/{sneaker}/complete', [StripePaymentsController::class, 'complete'])->name('complete');
 
 require __DIR__.'/auth.php';
 
