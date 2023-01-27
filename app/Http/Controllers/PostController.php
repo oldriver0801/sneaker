@@ -36,7 +36,7 @@ class PostController extends Controller
     }
     public function update(PostRequest $request,Sneaker $sneaker)
     {
-        $input_sneaker = $request['post'];
+        $input_sneaker = $request['sneaker'];
         $input_sneaker += ['user_id' => $request->user()->id];
         $sneaker->fill($input_sneaker)->save();
         
