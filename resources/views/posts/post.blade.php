@@ -18,7 +18,7 @@
                 <p class="title__error" style="color:red">{{ $errors->first('sneaker.name') }}</p>
             </div>
             <div class="body">
-                <h2>Body</h2>
+                <h2>message</h2>
                 <textarea name="sneaker[body]" placeholder="今日も1日お疲れさまでした。">{{ old('sneaker.body') }}</textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('sneaker.body') }}</p>
             </div>

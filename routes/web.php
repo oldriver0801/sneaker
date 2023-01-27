@@ -5,16 +5,7 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripePaymentsController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,7 +29,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/sneakers/{sneaker}/settlement', [StripePaymentsController::class, 'settlement'])->name('settlement');
 Route::post('/sneakers/{sneaker}/settlement/payment', [StripePaymentsController::class, 'Payment'])->name('payment');
-Route::get('/sneakers/{sneaker}/complete', [StripePaymentsController::class, 'complete'])->name('complete');
+Route::post('/payment', [StripePaymentsController::class, 'complete'])->name('complete');
 
 require __DIR__.'/auth.php';
 
