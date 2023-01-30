@@ -173,7 +173,7 @@
         </script>
     
  
-ß</section>
+</section>
 
 <!-- Footer -->
 <footer class="py-6  bg-gray-200 text-gray-900">
