@@ -15,12 +15,16 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
       </svg>
 
-      <span class="self-center whitespace-nowrap text-xl font-semibold">Termcode</span>
+      <span class="self-center whitespace-nowrap text-xl font-semibold">Sneakers</span>
     </a>
     <div class="mt-2 sm:mt-0 sm:flex md:order-2">
       <!-- Login Button -->
+      <a href="{{ route('login') }}">
       <button type="button" class="rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg">Login</button>
+      </a>
+      <a href="{{ route('register') }}">
       <button type="button" class="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg">Register</button>
+      </a>
       <!-- Register Button -->
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
@@ -60,13 +64,6 @@
       <a href="/sneakers/{{ $sneaker->id }}">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="{{ $sneaker->image_url }}" alt="画像" />
-          <div class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-            </svg>
-
-            <button class="text-sm">Add to cart</button>
-          </div>
         </div>
 
         <div class="mt-1 p-2">
@@ -80,7 +77,11 @@
             </p>
 
             <div class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
+            <form action="/sneakers/{{ $sneaker->id }}" id="form_{{ $sneaker->id }}" method="post">
+                @csrf
+                @method('DELETE')
               <button class="text-sm" onclick="deleteSneaker({{ $sneaker->id }})">delete</button>
+            </form>
             </div>
           </div>
         </div>

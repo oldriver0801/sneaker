@@ -19,7 +19,7 @@
             </div>
             <div class="body">
                 <h2>message</h2>
-                <textarea name="sneaker[body]" placeholder="今日も1日お疲れさまでした。">{{ old('sneaker.body') }}</textarea>
+                <textarea name="sneaker[body]" cols="30" row="10" placeholder="・サイズ・状態・値段・その他">{{ old('sneaker.body') }}</textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('sneaker.body') }}</p>
             </div>
             <div class="image">
