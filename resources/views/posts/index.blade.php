@@ -15,14 +15,12 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
       </svg>
 
-      <span class="self-center whitespace-nowrap text-xl font-semibold">Sneakers</span>
+      <span class="self-center whitespace-nowrap text-xl font-semibold">Sneaker</span>
     </a>
     <div class="mt-2 sm:mt-0 sm:flex md:order-2">
       <!-- Login Button -->
-      <a href="{{ route('login') }}">
+      
       <button type="button" class="rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg">Login</button>
-      </a>
-      <a href="{{ route('register') }}">
       <button type="button" class="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg">Register</button>
       </a>
       <!-- Register Button -->
