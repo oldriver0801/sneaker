@@ -58,13 +58,13 @@
 <section class="py-10 bg-gray-100">
   <div class="mx-auto grid max-w-6xl  grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
      @foreach ($sneakers as $sneaker)
-    <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
+    <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 relative">
       <a href="/sneakers/{{ $sneaker->id }}">
-        <div class="relative flex items-end overflow-hidden rounded-xl">
+        <div class="relative flex items-end overflow-hidden rounded-xl h-1/2">
           <img src="{{ $sneaker->image_url }}" alt="画像" />
         </div>
 
-        <div class="mt-1 p-2">
+        <div class="mt-1 p-2 h-1/2 absolute top-1/2">
           <a href="/sneakers/{{ $sneaker->id }}" class="text-slate-700">{{ $sneaker->name }}</a>
           <p class="body" class="mt-1 text-sm text-slate-400">{{ $sneaker->body }}</p>
           
