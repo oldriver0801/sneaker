@@ -47,6 +47,10 @@ class PostController extends Controller
         $sneaker->delete();
         return redirect('/');
     }
+    public function welcome()
+    {
+        return view('posts/welcome');
+    }
 }
 
 ?>

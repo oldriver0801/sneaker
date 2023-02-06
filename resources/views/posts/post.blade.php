@@ -19,8 +19,7 @@
             <div class="mt-2 sm:mt-0 sm:flex md:order-2">
               <!-- Login Button -->
               
-              <button type="button" class="rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg">Login</button>
-              <button type="button" class="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg">Register</button>
+              
               </a>
               <!-- Register Button -->
               <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden" aria-controls="navbar-sticky" aria-expanded="false">
@@ -46,14 +45,17 @@
             </div>
           </div>
         </nav>
+      <div class="pl-10">
         <h1>Blog Name</h1>
         <form action="/sneakers" method="POST" enctype="multipart/form-data">
             @csrf
+          <div class="pt-20">
             <div class="title">
                 <h2>Name</h2>
                 <input type="text" name="sneaker[name]" placeholder="タイトル" value="{{ old('sneaker.name') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('sneaker.name') }}</p>
             </div>
+          </div>
             <div class="body">
                 <h2>message</h2>
                 <textarea name="sneaker[body]" cols="30" row="10" placeholder="・サイズ・状態・値段・その他">{{ old('sneaker.body') }}</textarea>
@@ -67,7 +69,9 @@
         <div class="back">
             <a href="/">back</a>
         </div>
+      </div>
     </body>
+    
 </html>
 </x-app-layout>
 
