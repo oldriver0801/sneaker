@@ -11,8 +11,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/', [PostController::class,'welcome'])->name('welcome');
+
 Route::controller(PostController::class)->middleware(['auth'])->group (function() {
-    Route::get('/', 'index')->name('index');
+    Route::get('/sneaker', 'index')->name('index');
     Route::get('/sneakers/post', 'post')->name('post');
     Route::get('/sneakers/{sneaker}', 'show')->name('show');
     Route::post('/sneakers', 'store')->name('store');

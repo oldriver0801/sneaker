@@ -20,9 +20,15 @@
     <div class="mt-2 sm:mt-0 sm:flex md:order-2">
       <!-- Login Button -->
       
-      <button type="button" class="rounde mr-3 hidden border border-blue-700 py-1.5 px-6 text-center text-sm font-medium text-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 md:inline-block rounded-lg">Login</button>
-      <button type="button" class="rounde mr-3 hidden bg-blue-700 py-1.5 px-6 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 md:mr-0 md:inline-block rounded-lg">Register</button>
-      </a>
+      
+      <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <x-dropdown-link :href="route('logout')"
+            onclick="event.preventDefault();
+            this.closest('form').submit();">
+            {{ __('Log Out') }}
+          </x-dropdown-link>
+      </form>
       <!-- Register Button -->
       <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden" aria-controls="navbar-sticky" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
@@ -58,13 +64,13 @@
 <section class="py-10 bg-gray-100">
   <div class="mx-auto grid max-w-6xl  grid-cols-1 gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
      @foreach ($sneakers as $sneaker)
-    <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 relative">
+    <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
       <a href="/sneakers/{{ $sneaker->id }}">
-        <div class="relative flex items-end overflow-hidden rounded-xl h-1/2">
+        <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="{{ $sneaker->image_url }}" alt="画像" />
         </div>
 
-        <div class="mt-1 p-2 h-1/2 absolute top-1/2">
+        <div class="mt-1 p-2">
           <a href="/sneakers/{{ $sneaker->id }}" class="text-slate-700">{{ $sneaker->name }}</a>
           <p class="body" class="mt-1 text-sm text-slate-400">{{ $sneaker->body }}</p>
           
