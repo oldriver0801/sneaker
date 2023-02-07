@@ -30,7 +30,7 @@
             <div class="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto" id="navbar-sticky">
               <ul class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium">
                 <li>
-                  <a href="/" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Home</a>
+                  <a href="/sneaker" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Home</a>
                 </li>
                 <li>
                   <a href="/sneakers/post" class="block rounded py-2 pl-3 pr-4 text-blue-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">投稿する</a>
@@ -67,7 +67,7 @@
             <input type="submit" value="保存"/>
         </form>
         <div class="back">
-            <a href="/">back</a>
+            <a href="/sneaker">back</a>
         </div>
       </div>
     </body>
