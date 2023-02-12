@@ -1,6 +1,6 @@
 <x-app-layout>
   <section>
-  <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">
+  <div class="bg-sneaker-image z-10 relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">
     <div class="flex w-full mx-auto text-left">
       <div class="relative inline-flex items-center mx-auto align-middle">
         <div class="text-center">
@@ -24,11 +24,6 @@
         </div>
       </div>
     </div>
-    <section id="intro">
-      <div class="flex flex-col items-center justify-center pt-24 mx-auto rounded-lg lg:px-10 max-w-7xl">
-        <img class="object-cover object-center w-full rounded-xl" alt="hero" src="/assets/images/placeholders/hero.webp">
-      </div>
-    </section>
   </div>
 </section>
 </x-app-layout>
