@@ -16,6 +16,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Sneaker::class);
     }
+    public function likes()
+    {
+        return $this->hasmany(Like::class);
+    }
     use HasApiTokens, HasFactory, Notifiable, Billable;
 
     protected $fillable = [
@@ -33,5 +37,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
-
 ?>

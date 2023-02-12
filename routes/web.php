@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StripePaymentsController;
-
+use App\Http\Controllers\LikeController;
 
 
 Route::get('/dashboard', function () {
@@ -32,7 +32,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/sneakers/{sneaker}/settlement', [StripePaymentsController::class, 'settlement'])->name('settlement');
 Route::post('/sneakers/{sneaker}/settlement/payment', [StripePaymentsController::class, 'Payment'])->name('payment');
 Route::post('/payment', [StripePaymentsController::class, 'complete'])->name('complete');
-
+Route::get('/reply/like/{sneaker}', [LikeController::class, 'like'])->name('like');
+Route::get('/reply/unlike/{sneaker}', [LikeController::class, 'unlike'])->name('unlike');
 require __DIR__.'/auth.php';
 
 ?>

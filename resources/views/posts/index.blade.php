@@ -4,6 +4,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     </head>
         <!-- Create By Joker Banny -->
 <body class="bg-white">
@@ -73,13 +74,38 @@
         <div class="mt-1 p-2">
           <a href="/sneakers/{{ $sneaker->id }}" class="text-slate-700">{{ $sneaker->name }}</a>
           <p class="body" class="mt-1 text-sm text-slate-400">{{ $sneaker->body }}</p>
-          
-
           <div class="mt-3 flex items-end justify-between">
             <p>
               <span class="text-sm text-slate-400">{{ $sneaker->user->name }}</span>
+              <span>
+              <!-- 誰がいいねしたかwhereで絞り込む -->
+              @if($sneaker->likes->where('user_id',Auth::id())->first())
+              <!-- 「いいね」取消用ボタンを表示 -->
+              <button type="button" >
+              	<a href="{{ route('unlike', $sneaker) }}" >
+              		<i class="fa-solid fa-heart" style="color:red;"></i>
+              		
+              		<!-- 「いいね」の数を表示 -->
+              		<span class="badge">
+              			{{ $sneaker->likes->count() }}
+              		</span>
+              	</a>
+              	</button>
+              @else
+              <!-- まだユーザーが「いいね」をしていなければ、「いいね」ボタンを表示 -->
+              <button type="button" >
+                
+              <a href="{{ route('like', $sneaker) }}">
+              	<i class="fa-regular fa-heart"></i>
+              		<!-- 「いいね」の数を表示 -->
+              		<span class="badge">
+              			{{ $sneaker->likes->count() }}
+              		</span>
+              	</a>
+              	</button>
+              @endif
+            </span>
             </p>
-
             <div class="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
             <form action="/sneakers/{{ $sneaker->id }}" id="form_{{ $sneaker->id }}" method="post">
                 @csrf
@@ -143,8 +169,6 @@
 		</div>
 	</div>
 </footer>
-
-  
 </body>
 </html>
 </x-app-layout>

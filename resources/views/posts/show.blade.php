@@ -6,6 +6,7 @@
         <title>Posts</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     </head>
     <body>
         <h1 class="title">
@@ -29,6 +30,7 @@
         </div>
         <div class="footer">
             <a href="/sneaker">戻る</a>
+             <i class="fa-regular fa-heart"></i>
         </div>
     </body>
 </html>

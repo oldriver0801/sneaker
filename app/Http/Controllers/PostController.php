@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Sneaker;
 use App\Http\Requests\PostRequest;
 use Cloudinary;
+use App\Models\Like;
 
 class PostController extends Controller
 {
