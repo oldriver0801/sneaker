@@ -13,6 +13,7 @@ module.exports = {
             backgroundImage: {
                 'sneaker-image': "url('/snesker_image.jpg')",
             },
+            
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },

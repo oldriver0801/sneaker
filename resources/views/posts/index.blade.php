@@ -44,12 +44,6 @@
         <li>
           <a href="/sneakers/post" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">投稿する</a>
         </li>
-        <li>
-          <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Services</a>
-        </li>
-        <li>
-          <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Contact</a>
-        </li>
       </ul>
     </div>
   </div>
@@ -73,7 +67,13 @@
 
         <div class="mt-1 p-2">
           <a href="/sneakers/{{ $sneaker->id }}" class="text-slate-700">{{ $sneaker->name }}</a>
-          <p class="body" class="mt-1 text-sm text-slate-400">{{ $sneaker->body }}</p>
+          <p class="body" class="mt-1 text-sm text-slate-400">
+            {{ $sneaker->body }}
+          </p>
+          <p class="price" class="text-slate-700">
+            {{ $sneaker->price }}
+          </p>
+          </p>
           <div class="mt-3 flex items-end justify-between">
             <p>
               <span class="text-sm text-slate-400">{{ $sneaker->user->name }}</span>

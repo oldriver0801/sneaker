@@ -35,12 +35,6 @@
                 <li>
                   <a href="/sneakers/post" class="block rounded py-2 pl-3 pr-4 text-blue-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">投稿する</a>
                 </li>
-                <li>
-                  <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Services</a>
-                </li>
-                <li>
-                  <a href="#" class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700">Contact</a>
-                </li>
               </ul>
             </div>
           </div>
@@ -58,8 +52,13 @@
           </div>
             <div class="body">
                 <h2>message</h2>
-                <textarea name="sneaker[body]" cols="30" row="10" placeholder="・サイズ・状態・値段・その他">{{ old('sneaker.body') }}</textarea>
+                <textarea name="sneaker[body]" cols="30" row="10" placeholder="・サイズ・状態・その他">{{ old('sneaker.body') }}</textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('sneaker.body') }}</p>
+            </div>
+            <div class="price">
+              <h2>price</h2>
+              <input type="text" name="sneaker[price]" placeholder="値段" value="{{ old('sneaker.price') }}"/>
+              <p class="title__error" style="color:red">{{ $errors->first('sneaker.price') }}</p>
             </div>
             <div class="image">
                 <input type="file" name="image">

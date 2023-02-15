@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Custmer;
 use Stripe\Charge;
+use App\Models\Sneaker;
 
 class StripePaymentsController extends Controller
 {
-    public function settlement()
+    public function settlement(Sneaker $sneaker)
     {
-        return view('posts/settlement');
+        return view('posts/settlement')->with(['sneaker'=>$sneaker]);
     }
     public function Payment(Request $request)
     {
@@ -27,7 +28,7 @@ class StripePaymentsController extends Controller
             dump($cunstomer->id);
         
             $charge=Charge::creeate(array('customer'=>$customer->id,
-                                      'amount'=>100,
+                                      'amount'=>$sneaker->price,
                                       'currency'=>jpy
                                       )
                                  ); 
