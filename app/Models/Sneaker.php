@@ -31,5 +31,6 @@ class Sneaker extends Model
     'body',
     'user_id',
     'image_url',
+    'price',
  ];
 }

@@ -6,7 +6,6 @@
         <title>Posts</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     </head>
     <body>
         <h1 class="title">
@@ -15,11 +14,12 @@
         <div class="content">
             <div class="content__post">
                 <h3>本文</h3>
-                <p>{{ $sneaker->body }}</p>    
+                <p>{{ $sneaker->body }}</p>
+                <p>{{ $sneaker->price }}</p>
             </div>
         </div>
         <div class="image">
-            <img src="{{ $sneaker->image_url }}" alt="画像が読み込めません"/>
+            <img src="{{ $sneaker->image_url }}" class="max-w-sm h-auto shadow-lg" alt="画像が読み込めません"/>
         </div>
             <small>{{ $sneaker->user->name }}</small>
         <div class=settlement>
@@ -30,7 +30,6 @@
         </div>
         <div class="footer">
             <a href="/sneaker">戻る</a>
-             <i class="fa-regular fa-heart"></i>
         </div>
     </body>
 </html>
