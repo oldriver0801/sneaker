@@ -61,7 +61,7 @@
      @foreach ($sneakers as $sneaker)
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
       <a href="/sneakers/{{ $sneaker->id }}">
-        <div class="relative flex items-end overflow-hidden rounded-xl">
+        <div class="relative flex items-end overflow-hidden rounded-xl h- w-">
           <img src="{{ $sneaker->image_url }}" alt="画像" />
         </div>
 
