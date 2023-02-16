@@ -18,8 +18,8 @@
                 <p>{{ $sneaker->price }}</p>
             </div>
         </div>
-        <div class="image">
-            <img src="{{ $sneaker->image_url }}" class="max-w-sm h-auto shadow-lg" alt="画像が読み込めません"/>
+        <div class="image w-90 h-90">
+            <img src="{{ $sneaker->image_url }}" alt="画像が読み込めません"/>
         </div>
             <small>{{ $sneaker->user->name }}</small>
         <div class=settlement>
