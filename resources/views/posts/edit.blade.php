@@ -12,13 +12,18 @@
                 @csrf
                 @method('PUT')
                 <div class='content__title'>
-                    <h2>タイトル</h2>
+                    <h2>名前</h2>
                     <input type='text' name='sneaker[name]' value="{{ $sneaker->name }}">
                 </div>
                 <div class='content__body'>
-                    <h2>本文</h2>
+                    <h2>メッセージ</h2>
                     <input type='text' name='sneaker[body]' value="{{ $sneaker->body }}">
                 </div>
+                <div class="content__price">
+                    <h2>値段</h2>
+                    <input type='text' name='sneaker[price]' value="{{ $sneaker->price }}">
+                </div>
+                <br>
                 <input type="submit" value="update">
             </form>
         </div>
